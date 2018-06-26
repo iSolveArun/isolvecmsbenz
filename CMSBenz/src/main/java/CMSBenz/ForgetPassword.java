@@ -12,47 +12,48 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import CMSBenzRead.ReadExcel;
+import CMSBenzRead.ReadProperties;
 
 public class ForgetPassword {
-
+	
 		static WebDriver driver;
+		CommonFunctions common = new CommonFunctions();
 		
-		
-		public void loadBrowser() throws Exception{  // Loading Browser
-			
-			System.setProperty("webdriver.chrome.driver", "D:\\SeleniumDrivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-//			System.setProperty("webdriver.gecko.driver", "D:\\SeleniumDrivers\\geckodriver.exe");
-//			driver = new FirefoxDriver();
-			
-			driver.get("http://172.16.0.74/isolvecms");
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-			}
-		
-		public void forgetPasswordWithMailID() throws Exception{  // Check forgetPasswordWithMailID
+		@BeforeTest
+		public void loadBrowser() throws Exception{
+		common.openBrowser("chrome");
+		common.getURL(ReadProperties.readProperties("url"));
+		common.maximizeScreen();
+		common.waitForTime(20);	
+		}
+		@Test
+		public void forgetPasswordWithMailID() throws Exception{  
 			
 			System.out.println("Case1 ::: forgetPasswordWithMailID :::");
-			driver.findElement(By.xpath("//*[contains(text(),'Forgot Password')]")).click();
-			
-			WebElement mailID = driver.findElement(By.xpath("//*[@id=\"Email\"]"));
-			mailID.sendKeys("testing.engg@isolve.co.in");
+			common.inputForSendKeysAndClick(ReadProperties.readProperties("ForgotPwdlink"), ReadExcel.getValue(""), "click");
+			common.inputForSendKeysAndClick(ReadProperties.readProperties("reusername"), ReadExcel.getValue("reusername"), "input");
+			WebElement mailID = (WebElement) common.inputForSendKeysAndClick(ReadProperties.readProperties("Emaill"), ReadExcel.getValue("Email"), "input");
 			String getMailID = mailID.getAttribute("value");
 			System.out.println(getMailID);
 			
-			boolean mailTest = validate(getMailID);
-			if(mailTest) {
+			boolean mailID1 = validate(getMailID);
+			if(mailID1) {
 				System.out.println("Valid MailID");
 			} else {
 				System.out.println("InValid MailID");
 			}
-			
+			common.inputForSendKeysAndClick(ReadProperties.readProperties("resetbutton"), ReadExcel.getValue(""), "click");
 			driver.findElement(By.xpath("//input[@id='btnResetPassword']")).click();
 			File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileHandler.copy(image, new File("D:\\Senthil\\Java Program\\CMSBenz\\Screenshots\\forgetPasswordWithMailID-ForgetPassword.png"));
 		}
 		
-		public void forgetPasswordWithOutMailID() throws Exception{  // Check forgetPassword WithOut MailID
+		/*public void forgetPasswordWithOutMailID() throws Exception{  // Check forgetPassword WithOut MailID
 			System.out.println("Case2 ::: forgetPasswordWithOutMailID :::");
 			driver.findElement(By.xpath("//*[contains(text(),'Forgot Password')]")).click();
 			driver.findElement(By.xpath("//*[@id=\"Email\"]")).sendKeys("");
@@ -74,21 +75,21 @@ public class ForgetPassword {
 			
 			closeBtn.click();
 			System.out.println("Clicked Close button");
-			Thread.sleep(2000);
+			Thread.sleep(2000);*/
 			
 			
-			if(driver.findElement(By.xpath("//*[@id='divForgotPasswordwindow']/div/div/div[3]/button")).isDisplayed()) {
-				System.out.println("Case Failed ::: Close function not works");
-			} else {
-				System.out.println("Case Passed ::: Close function works");
-			}
-//			if(driver.findElement(By.xpath("//*[@id='divForgotPasswordwindow']/div/div/div[3]/button")) != null) {
-//				System.out.println("Failed ::: Close Function nots Works");
+//			if(driver.findElement(By.xpath("//*[@id='divForgotPasswordwindow']/div/div/div[3]/button")).isDisplayed()) {
+//				System.out.println("Case Failed ::: Close function not works");
 //			} else {
-//				System.out.println("Passed ::: Close Function Works");
+//				System.out.println("Case Passed ::: Close function works");
 //			}
+////			if(driver.findElement(By.xpath("//*[@id='divForgotPasswordwindow']/div/div/div[3]/button")) != null) {
+////				System.out.println("Failed ::: Close Function nots Works");
+////			} else {
+////				System.out.println("Passed ::: Close Function Works");
+////			}
 			
-		}
+		
 		
 		public Pattern ValidateMail = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 		
@@ -100,16 +101,22 @@ public class ForgetPassword {
 			driver.close();
 		}
 		
+		
+		@AfterTest
+		public void closeBrowser1() throws Exception{
+			common.closeBrowser();
+		}
+		
 		public static void main(String[] args) throws Exception {
 			ForgetPassword fog = new ForgetPassword();
-//			fog.loadBrowser();
+			fog.loadBrowser();
 //			fog.forgetPasswordWithMailID();
 //			fog.closeBrowser();
 //			fog.loadBrowser();
 //			fog.forgetPasswordWithOutMailID();
 //			fog.closeBrowser();
-			fog.loadBrowser();
-			fog.closeButton();
+//			fog.loadBrowser();
+//			fog.closeButton();
 			//fog.closeBrowser();			
 		}
 }

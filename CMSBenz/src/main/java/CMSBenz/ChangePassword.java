@@ -24,10 +24,6 @@ public class ChangePassword {
 		driver.findElement(By.xpath("//button[@id='btnSubmit']")).click();
 		System.out.println("Clicked Login Button");
 		Thread.sleep(3000);
-		
-		****************************
-		System.out.println("Testing Github");
-		****************************
 		driver.close();
 		
 		System.out.println("Test GITHUB");

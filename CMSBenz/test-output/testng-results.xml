@@ -1,28 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14179" started-at="2018-06-22T09:52:48Z" finished-at="2018-06-22T09:53:02Z">
+  <suite name="Default suite" duration-ms="10602" started-at="2018-06-26T11:00:32Z" finished-at="2018-06-26T11:00:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14179" started-at="2018-06-22T09:52:48Z" finished-at="2018-06-22T09:53:02Z">
+    <test name="Default test" duration-ms="10602" started-at="2018-06-26T11:00:32Z" finished-at="2018-06-26T11:00:43Z">
       <class name="CMSBenz.Login">
-        <test-method status="PASS" signature="loadBrowser()[pri:0, instance:CMSBenz.Login@7c16905e]" name="loadBrowser" is-config="true" duration-ms="7911" started-at="2018-06-22T15:22:48Z" finished-at="2018-06-22T15:22:56Z">
+        <test-method status="PASS" signature="loadBrowser()[pri:0, instance:CMSBenz.Login@58651fd0]" name="loadBrowser" is-config="true" duration-ms="7752" started-at="2018-06-26T16:30:32Z" finished-at="2018-06-26T16:30:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadBrowser -->
-        <test-method status="PASS" signature="testCase01()[pri:0, instance:CMSBenz.Login@7c16905e]" name="testCase01" duration-ms="3407" started-at="2018-06-22T15:22:56Z" finished-at="2018-06-22T15:22:59Z">
+        <test-method status="FAIL" signature="testCase01()[pri:0, instance:CMSBenz.Login@58651fd0]" name="testCase01" duration-ms="750" started-at="2018-06-26T16:30:40Z" finished-at="2018-06-26T16:30:41Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at CMSBenzRead.ReadExcel.getDatamap(ReadExcel.java:47)
+	at CMSBenzRead.ReadExcel.getValue(ReadExcel.java:59)
+	at CMSBenz.Login.testCase01(Login.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase01 -->
-        <test-method status="PASS" signature="testCase02()[pri:0, instance:CMSBenz.Login@7c16905e]" name="testCase02" duration-ms="391" started-at="2018-06-22T15:22:59Z" finished-at="2018-06-22T15:22:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCase02 -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:CMSBenz.Login@7c16905e]" name="closeBrowser" is-config="true" duration-ms="2454" started-at="2018-06-22T15:22:59Z" finished-at="2018-06-22T15:23:02Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:CMSBenz.Login@58651fd0]" name="closeBrowser" is-config="true" duration-ms="2075" started-at="2018-06-26T16:30:41Z" finished-at="2018-06-26T16:30:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
+        <test-method status="FAIL" signature="testCase02()[pri:0, instance:CMSBenz.Login@58651fd0]" name="testCase02" duration-ms="0" started-at="2018-06-26T16:30:41Z" finished-at="2018-06-26T16:30:41Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at CMSBenzRead.ReadExcel.getDatamap(ReadExcel.java:47)
+	at CMSBenzRead.ReadExcel.getValue(ReadExcel.java:59)
+	at CMSBenz.Login.testCase02(Login.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCase02 -->
       </class> <!-- CMSBenz.Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

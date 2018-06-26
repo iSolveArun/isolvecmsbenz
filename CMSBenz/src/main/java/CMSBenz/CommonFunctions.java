@@ -23,13 +23,13 @@ public void getURL(String url) {
 }
 public void openBrowser(String browser) throws Exception{
 	if (browser.equalsIgnoreCase("chrome")) {
-		System.setProperty("webdriver.chrome.driver", "D:\\SeleniumDrivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\Testing docs\\chromedriver.exe");
 		driver = new ChromeDriver();
 	} else if (browser.equalsIgnoreCase("Firefox")) {
-		System.setProperty("webdriver.gecko.driver", "D:\\SeleniumDrivers\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "D:\\Testing docs\\geckodriver.exe");
 		driver = new FirefoxDriver();
 	} else if (browser.equalsIgnoreCase("ie")) {
-		System.setProperty("webdriver.ie.driver", "D:\\SeleniumDrivers\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "D:\\Testing docs\\IEDriverServer.exe");
 		driver = new InternetExplorerDriver();
 	} else {
 		System.out.println("No Match with any browser...");
