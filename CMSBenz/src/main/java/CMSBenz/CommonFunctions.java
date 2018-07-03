@@ -16,7 +16,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.io.FileHandler;
 
 public class CommonFunctions {
-	WebDriver driver;
+	public WebDriver driver;
 
 public void getURL(String url) {
 	driver.get(url);

@@ -35,9 +35,13 @@ public class ForgetPassword {
 		public void forgetPasswordWithMailID() throws Exception{  
 			
 			System.out.println("Case1 ::: forgetPasswordWithMailID :::");
-			common.inputForSendKeysAndClick(ReadProperties.readProperties("ForgotPwdlink"), ReadExcel.getValue(""), "click");
+			common.inputForSendKeysAndClick(ReadProperties.readProperties("forgotPwdlink"), ReadExcel.getValue(""), "click");
 			common.inputForSendKeysAndClick(ReadProperties.readProperties("reusername"), ReadExcel.getValue("reusername"), "input");
-			WebElement mailID = (WebElement) common.inputForSendKeysAndClick(ReadProperties.readProperties("Emaill"), ReadExcel.getValue("Email"), "input");
+			WebElement mailID = (WebElement) common.inputForSendKeysAndClick(ReadProperties.readProperties("Email"), ReadExcel.getValue("Emaill"), "input");
+			common.inputForSendKeysAndClick(ReadProperties.readProperties("resetbutton"), ReadExcel.getValue(""), "click");
+			File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileHandler.copy(image, new File("D:\\Senthil\\Java Program\\CMSBenz\\Screenshots\\forgetPasswordWithMailID-ForgetPassword.png"));
+		
 			String getMailID = mailID.getAttribute("value");
 			System.out.println(getMailID);
 			
@@ -47,10 +51,10 @@ public class ForgetPassword {
 			} else {
 				System.out.println("InValid MailID");
 			}
-			common.inputForSendKeysAndClick(ReadProperties.readProperties("resetbutton"), ReadExcel.getValue(""), "click");
-			driver.findElement(By.xpath("//input[@id='btnResetPassword']")).click();
-			File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileHandler.copy(image, new File("D:\\Senthil\\Java Program\\CMSBenz\\Screenshots\\forgetPasswordWithMailID-ForgetPassword.png"));
+//			common.inputForSendKeysAndClick(ReadProperties.readProperties("resetbutton"), ReadExcel.getValue(""), "click");
+//			driver.findElement(By.xpath("//input[@id='btnResetPassword']")).click();
+//			File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//			FileHandler.copy(image, new File("D:\\Senthil\\Java Program\\CMSBenz\\Screenshots\\forgetPasswordWithMailID-ForgetPassword.png"));
 		}
 		
 		/*public void forgetPasswordWithOutMailID() throws Exception{  // Check forgetPassword WithOut MailID
@@ -97,20 +101,21 @@ public class ForgetPassword {
 			Matcher matcher = ValidateMail .matcher(emailStr);
 			return matcher.find();
 			}
-		public void closeBrowser() {
-			driver.close();
-		}
+//		public void closeBrowser() {
+//			driver.close();
+//		}
 		
 		
 		@AfterTest
-		public void closeBrowser1() throws Exception{
-			common.closeBrowser();
-		}
-		
+//		public void closeBrowser1() throws Exception{
+//			common.closeBrowser();
+//		}
+//		
 		public static void main(String[] args) throws Exception {
+			
 			ForgetPassword fog = new ForgetPassword();
 			fog.loadBrowser();
-//			fog.forgetPasswordWithMailID();
+			fog.forgetPasswordWithMailID();
 //			fog.closeBrowser();
 //			fog.loadBrowser();
 //			fog.forgetPasswordWithOutMailID();

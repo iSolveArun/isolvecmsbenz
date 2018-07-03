@@ -8,6 +8,7 @@ import CMSBenzRead.ReadExcel;
 import CMSBenzRead.ReadProperties;
 
 public class Login {
+	
 	CommonFunctions common = new CommonFunctions();
 	
 	
@@ -20,10 +21,12 @@ public class Login {
 	}
 	
 	@Test
-	public void testCase01() throws Exception{				
-		common.inputForSendKeysAndClick(ReadProperties.readProperties("username_logtxt"), ReadExcel.getValue("login_username"), "input");
+	public void testCase01() throws Exception{
+	
+//		common.inputForSendKeysAndClick(ReadProperties.readProperties("username_logtxt"), ReadExcel.getValue(""), "click");
+		common.inputForSendKeysAndClick(ReadProperties.readProperties("username_logtxt"), ReadExcel.getValue("username_logtxt"), "input");
 		common.printMessage("Entered Username");
-		common.inputForSendKeysAndClick(ReadProperties.readProperties("pwd_logtxt"), ReadExcel.getValue("login_pwd"), "input");
+		common.inputForSendKeysAndClick(ReadProperties.readProperties("pwd_logtxt"), ReadExcel.getValue("pwd_logtxt"), "input");
 		common.printMessage("Entered Password");
 		common.inputForSendKeysAndClick(ReadProperties.readProperties("submitbtn"), ReadExcel.getValue(""), "click");
 		common.printMessage("Clicked Submit button and Home page loaded");
@@ -32,7 +35,7 @@ public class Login {
 	
 	@Test
 	public void testCase02() throws Exception{
-		//common.inputForSendKeysAndClick(ReadProperties.readProperties("chnagePWDlnk"), ReadExcel.getValue(""), "click");
+		common.inputForSendKeysAndClick(ReadProperties.readProperties("chnagePWDlnk"), ReadExcel.getValue(""), "click");
 		common.printMessage("clicked link");
 		common.inputForSendKeysAndClick(ReadProperties.readProperties("oldpwdtxt"), ReadExcel.getValue("oldpwd"), "input");
 		common.printMessage("Entered old Pwd");
@@ -43,9 +46,12 @@ public class Login {
 		common.inputForSendKeysAndClick(ReadProperties.readProperties("chnagebtn"), ReadExcel.getValue(""), "click");
 		common.printMessage("Clicked change btn");
 	}
-	
+
 	@AfterTest
 	public void closeBrowser() throws Exception{
 		common.closeBrowser();
+		
 	}
 }
+	
+

@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 public class ReadExcel {
 	
 	static XSSFWorkbook workbook;
@@ -17,24 +17,23 @@ public class ReadExcel {
 	static Row row;
 	static int rowNos;
 	static Cell cell;
+
 	
 	public static void loadExcel() throws Exception{
-		
 		System.out.println("Loading Excel :::");
-		FileInputStream File = new FileInputStream("C:\\Users\\ma12828\\git\\isolvecmsbenz\\CMSBenz\\src\\test\\java\\CMSBenz\\Data.xlsx");
+		FileInputStream File = new FileInputStream("D:\\Test123.xlsx");
 		workbook = new XSSFWorkbook(File);
 		sheet = workbook.getSheet("Sheet1");
 		File.close();
 		
-		rowNos = sheet.getPhysicalNumberOfRows();
-		System.out.println(rowNos);
+//		rowNos = sheet.getPhysicalNumberOfRows();
+//		System.out.println(rowNos);
 		}
 	
 	public static Map<String, Map<String, String>> getDatamap() throws Exception {
 		if(sheet==null) {
 			loadExcel();
 		}
-		System.out.println("Excel loaded");
 		Map<String, Map<String,String>> superMap = new HashMap<String, Map<String,String>>();
 		Map<String,String> secondMap = new HashMap<String,String>();
 		
@@ -55,15 +54,15 @@ public class ReadExcel {
 	}
 	
 	public static String getValue(String key) throws Exception {
-		System.out.println("Value loaded");
 		Map<String, String> myVal = getDatamap().get("MASTERDATA");
+		
 		String retValue = myVal.get(key);
 		return retValue;
-		
 		}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(getValue("login_username"));
-		System.out.println(getValue("login_pwd"));
+		System.out.println(getValue("username_logtxt"));
+		System.out.println(getValue("pwd_logtxt"));
+		System.out.println(getValue("old"));
 	}
 	}

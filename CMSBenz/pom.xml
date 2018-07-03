@@ -26,7 +26,14 @@
             <artifactId>selenium-java</artifactId>								
             <version>3.12.0</version>								
 		</dependency>				
-        <dependency>				
+        
+       	 <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>VERSION</version>
+	</dependency>
+	<dependency>	
+        			
             <groupId>org.testng</groupId>								
             <artifactId>testng</artifactId>								
             <version>6.8</version>								

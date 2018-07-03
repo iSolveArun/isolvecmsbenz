@@ -22,7 +22,7 @@ public class LoginScreenTestCases {
 		
 	public void loadBrowser() throws Exception{  // Loading Browser
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\SeleniumDrivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(readPro.readProperties("url"));
 		driver.manage().window().maximize();
@@ -31,7 +31,7 @@ public class LoginScreenTestCases {
 		
 	public void loginWithValidCredentials() throws Exception{  // Valid Credentials-Login
 		System.out.println("Case1 ::: loginWithValidCredentials :::");
-		driver.findElement(By.xpath(readPro.readProperties("username_logbtn"))).sendKeys(readExe.getValue("login_username")); 
+		driver.findElement(By.xpath(readPro.readProperties("username_logbtn"))).sendKeys(readExe.getValue("username_logtxt")); 
 		System.out.println("Entered UserName");
 		driver.findElement(By.xpath(readPro.readProperties("pwd_logbtn"))).sendKeys(readExe.getValue("login_pwd"));
 		System.out.println("Entered Password");
@@ -40,7 +40,7 @@ public class LoginScreenTestCases {
 		Thread.sleep(3000);
 		
 		File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileHandler.copy(image, new File("D:\\Senthil\\Java Program\\CMSBenz\\Screenshots\\ValidCredentials-Login.png"));
+		FileHandler.copy(image, new File("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\ValidCredentials-Login.png"));
 
 		String actTitle = driver.getTitle();
 		System.out.println(actTitle);
@@ -61,7 +61,7 @@ public class LoginScreenTestCases {
 		System.out.println("Clicked Login Button");
 		
 		File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileHandler.copy(image, new File("D:\\Senthil\\Java Program\\CMSBenz\\Screenshots\\InValidUserName-Login.png"));
+		FileHandler.copy(image, new File("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\InValidUserName-Login.png"));
 		
 		String actTitle = driver.getTitle();
 		System.out.println(actTitle);
@@ -82,7 +82,7 @@ public class LoginScreenTestCases {
 		System.out.println("Clicked Login Button");
 		
 		File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileHandler.copy(image, new File("D:\\Senthil\\Java Program\\CMSBenz\\Screenshots\\InValidPassword-Login.png"));
+		FileHandler.copy(image, new File("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\InValidPassword-Login.png"));
 		String actTitle = driver.getTitle();
 		System.out.println(actTitle);
 		if(actTitle.equals(homePageTitle)) {
@@ -102,7 +102,7 @@ public class LoginScreenTestCases {
 		System.out.println("Clicked Login Button");
 		
 		File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileHandler.copy(image, new File("D:\\Senthil\\Java Program\\CMSBenz\\Screenshots\\EmptyCredentials.png"));
+		FileHandler.copy(image, new File("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\EmptyCredentials.png"));
 		String actTitle = driver.getTitle();
 		System.out.println(actTitle);
 		if(actTitle.equals(homePageTitle)) {
@@ -122,15 +122,15 @@ public class LoginScreenTestCases {
 		log.loadBrowser();
 		log.loginWithValidCredentials();
 		log.closeBrowser();
-//		log.loadBrowser();
-//		log.loginWithInValidUserName();
-//		log.closeBrowser();
-//		log.loadBrowser();
-//		log.loginWithInValidPassword();
-//		log.closeBrowser();
-//		log.loadBrowser();
-//		log.loginWithEmptyCredentials();
-//		log.closeBrowser();
+		log.loadBrowser();
+		log.loginWithInValidUserName();
+		log.closeBrowser();
+		log.loadBrowser();
+		log.loginWithInValidPassword();
+		log.closeBrowser();
+		log.loadBrowser();
+		log.loginWithEmptyCredentials();
+		log.closeBrowser();
 
 	}
 }
