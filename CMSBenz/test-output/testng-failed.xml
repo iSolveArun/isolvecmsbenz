@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="CMSBenz.ForgetPassword">
+      <class name="CMSBenz.ChangePassword">
         <methods>
-          <include name="forgetPasswordWithMailID"/>
           <include name="loadBrowser"/>
+          <include name="Changepwasswordwrgoldpwd03"/>
+          <include name="Changepwasswordmismatchpwd02"/>
+          <include name="Changepwasswordvaild04"/>
         </methods>
-      </class> <!-- CMSBenz.ForgetPassword -->
+      </class> <!-- CMSBenz.ChangePassword -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
