@@ -46,7 +46,7 @@ public class BenzForgetPwd_TestCase {
 			}
 			
 			common.inputForSendKeysAndClick(ReadProperties.readProperties("frgtpwd_resetbtn"), "", "click");
-			common.takeScreenshot("C:\\Users\\bs2896\\git\\Cmsbenz\\CMSBenz\\Screenshots\\TCID_BNZ_FPWD001.png");
+			common.takeScreenshot("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\forgetPasswordWithMailID_TCID_BNZ_FPWD001.png");
 			common.closeBrowser();
 		}
 		
@@ -60,7 +60,7 @@ public class BenzForgetPwd_TestCase {
 			common.inputForSendKeysAndClick(ReadProperties.readProperties("frgtpwd_mailtxt"), "", "input");
 			common.sleep(1000);
 			common.inputForSendKeysAndClick(ReadProperties.readProperties("frgtpwd_resetbtn"), "", "click");
-			common.takeScreenshot("C:\\Users\\bs2896\\git\\Cmsbenz\\CMSBenz\\Screenshots\\TCID_BNZ_FPWD002.png");
+			common.takeScreenshot("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\forgetPasswordWithOutMailID_TCID_BNZ_FPWD002.png");
 			common.closeBrowser();
 		}
 		
@@ -85,7 +85,10 @@ public class BenzForgetPwd_TestCase {
 			} else {
 				common.printMessage("Passed");
 			}		
+			common.takeScreenshot("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\forgetPasswordWithOutMailID_TCID_BNZ_FPWD002.png");
 		}
+		
+		
 		
 		public Pattern ValidateMail = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 		

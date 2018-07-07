@@ -3,16 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="CMSBenz.BenzLogin_TestCase">
+      <class name="CMSBenz.Master">
         <methods>
-          <include name="loginWithInValidPassword_TCID_BNZ_LIN003"/>
-          <include name="loginWithEmptyCredentials_TCID_BNZ_LIN004"/>
-          <include name="closeBrowser"/>
-          <include name="loadBrowserWithLogin"/>
-          <include name="loginWithInValidUserName_TCID_BNZ_LIN002"/>
-          <include name="loginWithValidCredentials_TCID_BNZ_LIN001"/>
+          <include name="loadBrowser"/>
+          <include name="designation"/>
         </methods>
-      </class> <!-- CMSBenz.BenzLogin_TestCase -->
+      </class> <!-- CMSBenz.Master -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

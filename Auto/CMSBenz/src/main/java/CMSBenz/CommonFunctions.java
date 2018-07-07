@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
@@ -28,7 +29,7 @@ public void getURL(String url) {
 }
 
 public void loginCMSBens() throws Exception{
-	System.setProperty("webdriver.chrome.driver", "D:\\Testing docs\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", "D:\\SeleniumDrivers\\chromedriver.exe");
 	driver = new ChromeDriver();
 	driver.get(ReadProperties.readProperties("url"));
 	driver.manage().window().maximize();
@@ -40,7 +41,7 @@ public void loginCMSBens() throws Exception{
 
 public void openBrowser(String browser) throws Exception{
 	if (browser.equalsIgnoreCase("chrome")) {
-		System.setProperty("webdriver.chrome.driver", "D:\\Testing docs\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\SeleniumDrivers\\New folder\\chromedriver.exe");
 		driver = new ChromeDriver();
 	} else if (browser.equalsIgnoreCase("Firefox")) {
 		System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
@@ -56,10 +57,17 @@ public void openBrowser(String browser) throws Exception{
 public void waitForTime(int time) {
 	driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 }
+public void action(String locator, String sendkeysvalue, String catt) {
+Actions action = new Actions(driver);
+WebElement element=driver.findElement(By.linkText("TEST"));
+action.doubleClick(element).perform();
+
+}
 
 public void maximizeScreen() {
 	driver.manage().window().maximize();
 }
+
 
 public Object inputForSendKeysAndClick(String locator, String sendkeysvalue, String cat) {
 	WebElement loc = null;		
@@ -230,6 +238,18 @@ public static Select drpdnElement(int dx,Object dindex){
 public void dp(String loct, int id) {
 	Select select = new Select(driver.findElement(By.xpath(loct)));
 	select.selectByIndex(id);
+
+}	
+public void dpText(String loct, String text) {
+	Select dropdown = new Select(driver.findElement(By.xpath("loct")));
+	dropdown.selectByVisibleText("text");
+}
+public void doubleClick(String locator) {
+
+	 Actions action = new Actions(driver);
+	 action.moveToElement(driver.findElement(By.xpath(locator))).doubleClick().build().perform();
+	 
 }
 }
+
 

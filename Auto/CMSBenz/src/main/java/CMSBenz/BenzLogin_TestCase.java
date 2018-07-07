@@ -29,7 +29,7 @@ public class BenzLogin_TestCase {
 			common.inputForSendKeysAndClick(ReadProperties.readProperties("submitbtn"), "", "click");
 			common.printMessage("Clicked Login Button");
 			common.sleep(2000);
-			common.takeScreenshot("C:\\Users\\bs2896\\git\\Cmsbenz\\CMSBenz\\Screenshots\\TCID_BNZ001.png");
+			common.takeScreenshot("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\loginWithValidCredentials_TCID_BNZ_LIN001.png");
 		
 			common.printMessage(common.getPageTitle());
 			
@@ -53,7 +53,7 @@ public class BenzLogin_TestCase {
 		common.inputForSendKeysAndClick(ReadProperties.readProperties("submitbtn"), "", "click");
 		common.printMessage("Clicked Login Button");
 		common.sleep(2000);
-		common.takeScreenshot("C:\\Users\\bs2896\\git\\Cmsbenz\\CMSBenz\\Screenshots\\TCID_BNZ002.png");
+		common.takeScreenshot("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\loginWithInValidUserName_TCID_BNZ_LIN002.png");
 	
 		common.printMessage(common.getPageTitle());
 		
@@ -77,7 +77,7 @@ public class BenzLogin_TestCase {
 		common.inputForSendKeysAndClick(ReadProperties.readProperties("submitbtn"), "", "click");
 		common.printMessage("Clicked Login Button");
 		common.sleep(2000);
-		common.takeScreenshot("C:\\Users\\bs2896\\git\\Cmsbenz\\CMSBenz\\Screenshots\\TCID_BNZ003.png");
+		common.takeScreenshot("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\loginWithInValidPassword_TCID_BNZ_LIN003.png");
 	
 		common.printMessage(common.getPageTitle());
 		
@@ -101,8 +101,7 @@ public class BenzLogin_TestCase {
 		common.inputForSendKeysAndClick(ReadProperties.readProperties("submitbtn"), "", "click");
 		common.printMessage("Clicked Login Button");
 		common.sleep(2000);
-		common.takeScreenshot("C:\\Users\\bs2896\\git\\Cmsbenz\\CMSBenz\\Screenshots\\TCID_BNZ004.png");
-	
+		common.takeScreenshot("D:\\Testing docs\\Projects\\Docs For CMS\\Auto Screen\\loginWithEmptyCredentials_TCID_BNZ_LIN004.png");
 		common.printMessage(common.getPageTitle());
 		
 		if(common.getPageTitle().equals(homePageTitle)) {

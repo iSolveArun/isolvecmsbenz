@@ -59,8 +59,8 @@ public class ReadExcel {
 		return retValue;
 		}
 	
-//	public static void main(String[] args) throws Exception {
-//		System.out.println(getValue("login_username"));
-//		System.out.println(getValue("login_pwd"));
-//	}
+	public static void main(String[] args) throws Exception {
+		System.out.println(getValue("login_username"));
+		System.out.println(getValue("login_pwd"));
+	}
 	}
